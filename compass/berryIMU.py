@@ -163,17 +163,17 @@ if(IMU.BerryIMUversion == 99):
     sys.exit()
 IMU.initIMU()       #Initialise the accelerometer, gyroscope and compass
 
-gyroXangle = 0.0
-gyroYangle = 0.0
-gyroZangle = 0.0
-CFangleX = 0.0
-CFangleY = 0.0
-kalmanX = 0.0
-kalmanY = 0.0
-
-a = datetime.datetime.now()
 
 def headingfunc(child_conn):
+    gyroXangle = 0.0
+    gyroYangle = 0.0
+    gyroZangle = 0.0
+    CFangleX = 0.0
+    CFangleY = 0.0
+    kalmanX = 0.0
+    kalmanY = 0.0
+
+    a = datetime.datetime.now()
     #Read the accelerometer,gyroscope and magnetometer values
     ACCx = IMU.readACCx()
     ACCy = IMU.readACCy()
