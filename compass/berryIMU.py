@@ -81,8 +81,8 @@ YP_11 = 0.0
 KFangleX = 0.0
 KFangleY = 0.0
 
-def heading(child_conn, msg):
-    child_conn.send(msg)
+def heading(child_conn):
+    child_conn.send("msg")
     child_conn.close()
 
 def kalmanFilterY ( accAngle, gyroRate, DT):
@@ -305,7 +305,7 @@ while True:
         outputString +="# kalmanX %5.2f   kalmanY %5.2f #" % (kalmanX,kalmanY)
 
     print(outputString)
-    heading(tiltCompensatedHeading)
+    heading()
 
     #slow program down a bit, makes the output more readable
     time.sleep(0.03)
