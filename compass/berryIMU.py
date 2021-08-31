@@ -81,7 +81,7 @@ YP_11 = 0.0
 KFangleX = 0.0
 KFangleY = 0.0
 
-def heading(child_conn):
+def headingfunc(child_conn):
     child_conn.send("msg")
     child_conn.close()
 
