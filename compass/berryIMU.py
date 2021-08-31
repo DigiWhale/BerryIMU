@@ -173,7 +173,7 @@ kalmanY = 0.0
 
 a = datetime.datetime.now()
 
-while True:
+while False:
 
 
     #Read the accelerometer,gyroscope and magnetometer values
