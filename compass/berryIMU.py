@@ -83,7 +83,7 @@ KFangleY = 0.0
 
 def headingfunc(child_conn):
     child_conn.send("msg")
-    child_conn.close()
+    # child_conn.close()
 
 def kalmanFilterY ( accAngle, gyroRate, DT):
     y=0.0
