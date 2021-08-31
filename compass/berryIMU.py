@@ -81,8 +81,8 @@ YP_11 = 0.0
 KFangleX = 0.0
 KFangleY = 0.0
 
-def headingfunc(child_conn):
-    child_conn.send("msg")
+# def headingfunc(child_conn):
+    # child_conn.send("msg")
     # child_conn.close()
 
 def kalmanFilterY ( accAngle, gyroRate, DT):
@@ -173,9 +173,7 @@ kalmanY = 0.0
 
 a = datetime.datetime.now()
 
-while False:
-
-
+def headingfunc(child_conn):
     #Read the accelerometer,gyroscope and magnetometer values
     ACCx = IMU.readACCx()
     ACCy = IMU.readACCy()
@@ -304,8 +302,10 @@ while False:
     if 0:                       #Change to '0' to stop  showing the angles from the Kalman filter
         outputString +="# kalmanX %5.2f   kalmanY %5.2f #" % (kalmanX,kalmanY)
 
-    print(outputString)
+    # print(outputString)
     # headingfunc()
 
     #slow program down a bit, makes the output more readable
-    time.sleep(0.03)
+    # time.sleep(0.03)
+    child_conn.send(tiltCompensatedHeading)
+    child_conn.close()
