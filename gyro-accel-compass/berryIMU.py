@@ -43,13 +43,12 @@ AA =  0.40      # Complementary filter constant
 # magYmax =  0
 # magZmax =  0
 
-magXmin = -1050
-magYmin = -684
-magZmin = -1791
-magXmax = 1203
-magYmax = 1212
-magZmax = 603
-
+magXmin = -542
+magYmin = -141
+magZmin = -1869
+magXmax = 531
+magYmax = 1124
+magZmax = -1363
 
 '''
 Here is an example:
