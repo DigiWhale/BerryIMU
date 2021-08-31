@@ -305,7 +305,7 @@ while True:
         outputString +="# kalmanX %5.2f   kalmanY %5.2f #" % (kalmanX,kalmanY)
 
     print(outputString)
-    # heading()
+    headingfunc()
 
     #slow program down a bit, makes the output more readable
     time.sleep(0.03)
