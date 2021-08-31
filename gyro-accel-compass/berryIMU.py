@@ -23,6 +23,7 @@ import IMU
 import datetime
 import os
 import sys
+from multiprocessing import Process,Pipe
 
 
 RAD_TO_DEG = 57.29578
@@ -80,8 +81,9 @@ YP_11 = 0.0
 KFangleX = 0.0
 KFangleY = 0.0
 
-
-
+def heading(child_conn, msg):
+    child_conn.send(msg)
+    child_conn.close()
 
 def kalmanFilterY ( accAngle, gyroRate, DT):
     y=0.0
@@ -303,6 +305,7 @@ while True:
         outputString +="# kalmanX %5.2f   kalmanY %5.2f #" % (kalmanX,kalmanY)
 
     print(outputString)
+    heading(tiltCompensatedHeading)
 
     #slow program down a bit, makes the output more readable
     time.sleep(0.03)
